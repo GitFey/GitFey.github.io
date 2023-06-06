@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>(FEND)A Future Enhanced Distribution-Aware Contrastive Learning Framework for Long-tail Trajectory Prediction | 罗辑往事</title><meta name="author" content="罗辑往事"><meta name="copyright" content="罗辑往事"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="[Title]FEND: A Future Enhanced Distribution-Aware Contrastive Learning Framework for Long-tail Trajectory Prediction(CVPR2023)摘要 困难 ： trajectory prediction suffers from data imbalance in the prevalent">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(FEND)A Future Enhanced Distribution-Aware Contrastive Learning Framework for Long-tail Trajectory Prediction">
+<meta property="og:url" content="http://pfzone.top/2023/06/04/9138a6ab450e/index.html">
+<meta property="og:site_name" content="罗辑往事">
+<meta property="og:description" content="[Title]FEND: A Future Enhanced Distribution-Aware Contrastive Learning Framework for Long-tail Trajectory Prediction(CVPR2023)摘要 困难 ： trajectory prediction suffers from data imbalance in the prevalent">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://pfzone.top/img/posts/FEND/2.png">
+<meta property="article:published_time" content="2023-06-04T01:00:00.000Z">
+<meta property="article:modified_time" content="2023-06-06T00:59:06.746Z">
+<meta property="article:author" content="罗辑往事">
+<meta property="article:tag" content="对比学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://pfzone.top/img/posts/FEND/2.png"><link rel="shortcut icon" href="/img/christmasjuju.png"><link rel="canonical" href="http://pfzone.top/2023/06/04/9138a6ab450e/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '(FEND)A Future Enhanced Distribution-Aware Contrastive Learning Framework for Long-tail Trajectory Prediction',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-06 08:59:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script src="https://cyan-blog.oss-cn-shenzhen.aliyuncs.com/cdn/js/three.min.js"></script><link rel="stylesheet" href="/css/myfont.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="centered"><div class="blob-1"></div><div class="blob-2"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+//监听页面加载完毕，因为页面加载速度太快，动画太短，禁用此项
+window.addEventListener('load',()=> { preloader.endLoading() })  
+
+//2秒自动关闭加载动画
+setTimeout(function(){preloader.endLoading();}, 2000);
+
+//鼠标点击事件关闭加载动画，狍狍等不及可以点一下
+document.getElementById('loading-box').addEventListener('click',()=> {preloader.endLoading()}) 
+
+
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/christmasjuju.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/gallery"><span> 相册</span></a></div></div></div></div><div class="canvas-container" id="canvas"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/posts/FEND/2.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">罗辑往事</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/gallery"><span> 相册</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">(FEND)A Future Enhanced Distribution-Aware Contrastive Learning Framework for Long-tail Trajectory Prediction</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-04T01:00:00.000Z" title="发表于 2023-06-04 09:00:00">2023-06-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-06T00:59:06.746Z" title="更新于 2023-06-06 08:59:06">2023-06-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="(FEND)A Future Enhanced Distribution-Aware Contrastive Learning Framework for Long-tail Trajectory Prediction"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="Title-FEND-A-Future-Enhanced-Distribution-Aware-Contrastive-Learning-Framework-for-Long-tail-Trajectory-Prediction-CVPR2023"><a href="#Title-FEND-A-Future-Enhanced-Distribution-Aware-Contrastive-Learning-Framework-for-Long-tail-Trajectory-Prediction-CVPR2023" class="headerlink" title="[Title]FEND: A Future Enhanced Distribution-Aware Contrastive Learning Framework for Long-tail Trajectory Prediction(CVPR2023)"></a>[Title]<strong>FEND: A Future Enhanced Distribution-Aware Contrastive Learning Framework for Long-tail Trajectory Prediction</strong>(CVPR2023)</h2><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><ul>
+<li>困难 ： trajectory prediction suffers from <strong>data imbalance</strong> in the prevalent datasets, and <strong>the tailed data</strong> is often more complicated and safety-critical. </li>
+<li>本文目标 ： we focus on dealing with <strong>the long-tail phenomenon</strong> in trajectory prediction.</li>
+<li>前人不足 ： Previous methods dealing with long-tail data did not take into account <strong>the variety of motion patterns</strong> in the tailed data.</li>
+<li>本文特色 ： <ol>
+<li>In this paper, we put forward a future enhanced <strong>contrastive learning framework</strong> to <u>recognize tail trajectory patterns</u> and <u>form a feature space with separate pattern clusters</u>. </li>
+<li>Furthermore, a distribution aware hyper predictor（分布感知超预测器） is brought up to better utilize the shaped feature space. </li>
+<li>Our method is  a model-agnostic framework and can be plugged into many well-known baselines.</li>
+</ol>
+</li>
+</ul>
+<h2 id="长尾问题"><a href="#长尾问题" class="headerlink" title="长尾问题"></a><strong>长尾问题</strong></h2><p><strong>来源</strong> ： 样本（类别）样本不平衡（class-imbalance）指的是分类任务中不同类别的训练样例数目差别很大的情况，一般地，样本类别比例（Imbalance  Ratio）（多数类vs少数类）明显大于1:1（如4：1）就可以归为样本不均衡的问题。现实中，样本不平衡是一种常见的现象，如：金融欺诈交易检测，欺诈交易的订单样本通常是占总交易数量的极少部分，而且对于有些任务而言少数样本更为重要。</p>
+<p><strong>举例：</strong>在真实的交通场景中，大多数轨迹遵循一定简单的运动规则，而偏离和避免碰撞的情况很少。因此，频繁出现的情况往往简单、容易预测，而尾部情况往往复杂，运动模式多，预测误差大，使得univ数据集更加对安全看重，如图1所示。尽管长尾预测问题具有重要意义，但在文献中很少被讨论。</p>
+<p><img src="/./img/posts/FEND/1.png"></p>
+<p><strong>定义</strong>：只有少量的类别含有较多样本（head），大部分类别的样本数都很少（tail）</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>背景 ：Despite the high accuracy those prediction methods have achieved, most of them treat the samples in the datasets equally in both training and evaluation phases. But there is a long-tailed phenomenon in prevalent datasets</p>
+<p>本文提出：A new framework is developed called FEND: <strong>Future ENhanced Distribution-aware contrastive trajectory prediction</strong>（未来增强分布感知对比轨迹预测）, which is <u>a pattern-based contrastive feature learning framework</u> enhanced by future trajectory information.</p>
+<p><strong>贡献：</strong>（对应上述方法）</p>
+<ul>
+<li>We propose a future enhanced contrastive feature learning framework for long-tailed trajectory prediction, which <u>can better distinguish tail patterns from head patterns,</u> and <u>the different patterns are represented by different cluster prototypes to enhance the modeling of the tailed data.</u></li>
+<li>We propose a distribution-aware hyper predictor, <strong>aiming at providing separated decoder parameters for trajectory inputs with different patterns.</strong></li>
+</ul>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p><img src="/./img/posts/FEND/2.png"></p>
+<h3 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h3><p>总体框架如上图。</p>
+<ol>
+<li>首先用轨迹特征提取器对历史轨迹和未来轨迹进行处理，用Kmeanes对提取的特征进行聚类，形成不同的模式聚类。(上半部分左边)</li>
+<li>聚类后，利用历史和未来信息自发地分离尾部轨迹模式和头部轨迹模式。(上半部分右边)</li>
+<li>根据Kmeans生成的伪聚类标签(下半部分Past trajectory encoding)对基线预测网络的历史编码特征进行PCL处理。</li>
+<li>通过执行PCL算法，对<strong>轨迹编码器</strong>的特征空间分别进行了单独的聚类。</li>
+<li>然后构造了<strong>超解码器</strong>，该解码器为不同的轨迹输入生成单独的解码器权重，因此头簇和尾簇中的轨迹被不同地预测。</li>
+</ol>
+<h3 id="Future-Enhanced-Contrastive-Learning"><a href="#Future-Enhanced-Contrastive-Learning" class="headerlink" title="Future Enhanced Contrastive Learning"></a>Future Enhanced Contrastive Learning</h3><p>此部分在文中分为 <strong>Future Enhanced Trajectory Clustering</strong> 和 <strong>Prototypical Contrastive Learning</strong>，前者用来生成对比样本，而后者进行PCL(原型对比学习)流程。</p>
+<p> <strong>Future Enhanced Trajectory Clustering</strong>使用多层次的聚类来执行Kmeans来实现层次结构，就像原始的PCL那样。</p>
+<h4 id="Prototypical-Contrastive-Learning"><a href="#Prototypical-Contrastive-Learning" class="headerlink" title="Prototypical Contrastive Learning"></a>Prototypical Contrastive Learning</h4><p>首先是<strong>损失函数</strong> ：<img src="/./img/posts/FEND/3.png"></p>
+<p>跟PCL所属相同，第一项是实例级的对比项，第二项是实例-原型对比项</p>
+<p>而Lins和Lproto又分别如下</p>
+<h4 id="Instance-wise-term"><a href="#Instance-wise-term" class="headerlink" title="Instance-wise term"></a>Instance-wise term</h4><p><img src="/./img/posts/FEND/4.png"></p>
+<p>实例级项可以帮助实例更快地聚集在一起，并且算法收敛得更快。</p>
+<p>正样本i+为与实例i来自同一簇的实例，批中的其他实例（即属于其他簇），视为负样本。j表示当前批处理数据中的任意样本。r表示批处理的大小。</p>
+<h4 id="Instance-prototype-term"><a href="#Instance-prototype-term" class="headerlink" title="Instance-prototype term"></a>Instance-prototype term</h4><p><img src="/./img/posts/FEND/5.png"></p>
+<p>原型项有助于保持局部平滑性和形成具有不同模式的集群。</p>
+<p>M为Kmeans聚类层次结构的个数，cms表示i所属的聚类的原型，cmj表示任意聚类j的原型。</p>
+<p>该原型是通过取一个集群中所有特征的平均值来计算的。Nm表示层次结构m的集群数。ϕmj表示簇j的密度</p>
+<h3 id="Distribution-Aware-Hyper-Predictor"><a href="#Distribution-Aware-Hyper-Predictor" class="headerlink" title="Distribution-Aware Hyper Predictor"></a>Distribution-Aware Hyper Predictor</h3><p>目标 ：头部簇和尾部簇应该被分配不同的解码器</p>
+<p>困难 ：尾部样本的数据量不足 <strong>（根据聚类结果，可以对数据量比较小的簇进行扩容（数据增强）再训练解码器，就解决了尾部数据不足的问题，这里就不用超网了）</strong> ，单独训练解码器会导致严重的过拟合。</p>
+<p>方法 ：使用超网络HyperNetworks。希望在整个数据集上转移公共知识，同时保持单独解码器的建模灵活性。</p>
+<p><strong>超网络（Hypernetworks，ICLR2017）</strong>表示用于产生较大规模网络参数的小规模网络，在这一过程中，主网络的作用与其他任意神经网络一样，将输入样本映射到对应的目标值，而超网络的作用则是接收一系列包含主网络参数结构信息的值作为输入然后产生主网络某一层的参数。</p>
+<p>原文 ：<em>D. Ha, A. Dai, and Q. V. Le, ‘HyperNetworks’. arXiv, Dec. 01, 2016. Accessed: Mar. 13, 2023. [Online]. Available: [<a target="_blank" rel="noopener" href="http://arxiv.org/abs/1609.09106]">http://arxiv.org/abs/1609.09106]</a></em></p>
+<p><strong>普通LSTM trajectory decoder</strong></p>
+<p>i、g、f、o分别为输入门、更新门、遗忘门和输出门。</p>
+<p><strong>f(t)是遗忘门门控，m(t-1)是历史状态信息，两者相乘代表t时刻允许多少历史信息进入来决定m(t)当前状态</strong></p>
+<p><strong>如果遗忘门全关取值0，则历史对当前状态无影响，如果遗忘门全开取值1，则历史信息原封不动的传到t时刻，没有任何信息损失，当然更大可能是取值0到1之间，代表历史信息的部分流入；</strong></p>
+<p><img src="/./img/posts/FEND/6.png"></p>
+<p><strong>HyperLSTM</strong></p>
+<p><img src="/./img/posts/FEND/7.png"></p>
+<p>y表示原始LSTM公式等式中{i、g、f、o}四个门中的一个。</p>
+<p>⊙表示元素级乘积操作，LN（）表示层的归一化，<strong>ds和b是来自超网络的权值和偏差调整向量，以改变原始LSTM中的权值和偏差</strong>。</p>
+<p>ds和b是由<strong>超网络的输出z生成</strong>的，指从超网络生成的权重和偏差调整向量，用于改变原始LSTM网络的权重和偏差。如在等式中(8)，其中Ws和by0为线性全连接层的权值和偏差。</p>
+<p>z可以写成如下，例如i与输入特性vi：（其中fH为超网络映射函数）</p>
+<p><img src="/./img/posts/FEND/8.png"></p>
+<h3 id="Loss-Reweighting"><a href="#Loss-Reweighting" class="headerlink" title="Loss Reweighting"></a>Loss Reweighting</h3><p><img src="/./img/posts/FEND/9.png"></p>
+<p>其中Lpred为基线预测网络的损失，λ是PCL损失项的系数。</p>
+<p>对于网络已经完美拟合的简单样本，PCL损失几乎不会给网络优化带来更多的好处。</p>
+<p>因此，我们使λ在不同的样本中有所不同，它作为一个门来关闭容易的样本上的PCL损失。</p>
+<p>我们使用热身训练阶段后网络的预测损失Lpred来表示样本的复杂度，记为L’pred。</p>
+<p><img src="/./img/posts/FEND/10.png"></p>
+<h2 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h2><p>为了在长尾数据上证明模型，我们需要对困难样本和那些容易进行评估的样本进行分离。</p>
+<p>具体来说，将数据集划分为7种样本：具有挑战性、误差最大的前1%-5%的样本，其余更容易获得的样本，以及数据集中的所有样本。</p>
+<p>下表为结果：</p>
+<p><img src="/./img/posts/FEND/11.png"></p>
+<p><img src="/./img/posts/FEND/12.png"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://pfzone.top">罗辑往事</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://pfzone.top/2023/06/04/9138a6ab450e/">http://pfzone.top/2023/06/04/9138a6ab450e/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://pfzone.top" target="_blank">罗辑往事</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0/">对比学习</a></div><div class="post_share"><div class="social-share" data-image="/img/posts/FEND/2.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/05/21/c938212a682d/"><img class="next-cover" src="/img/cover/wbh1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">miniSpring（4）-实现DI</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/04/18/3bc8fea59cba/" title="(CLUDA)CONTRASTIVE LEARNING FOR UNSUPERVISED DOMAIN ADAPTATION OF TIME SERIES"><img class="cover" src="/img/posts/cluda/2.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-18</div><div class="title">(CLUDA)CONTRASTIVE LEARNING FOR UNSUPERVISED DOMAIN ADAPTATION OF TIME SERIES</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/christmasjuju.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">罗辑往事</div><div class="author-info__description">没有人能找到这里，除了你</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/GitFey/GitFey.github.io"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎狍狍来访 ！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Title-FEND-A-Future-Enhanced-Distribution-Aware-Contrastive-Learning-Framework-for-Long-tail-Trajectory-Prediction-CVPR2023"><span class="toc-number">1.</span> <span class="toc-text">[Title]FEND: A Future Enhanced Distribution-Aware Contrastive Learning Framework for Long-tail Trajectory Prediction(CVPR2023)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">2.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%95%BF%E5%B0%BE%E9%97%AE%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">长尾问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">4.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%A7%88"><span class="toc-number">5.1.</span> <span class="toc-text">概览</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Future-Enhanced-Contrastive-Learning"><span class="toc-number">5.2.</span> <span class="toc-text">Future Enhanced Contrastive Learning</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Prototypical-Contrastive-Learning"><span class="toc-number">5.2.1.</span> <span class="toc-text">Prototypical Contrastive Learning</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Instance-wise-term"><span class="toc-number">5.2.2.</span> <span class="toc-text">Instance-wise term</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Instance-prototype-term"><span class="toc-number">5.2.3.</span> <span class="toc-text">Instance-prototype term</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Distribution-Aware-Hyper-Predictor"><span class="toc-number">5.3.</span> <span class="toc-text">Distribution-Aware Hyper Predictor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Loss-Reweighting"><span class="toc-number">5.4.</span> <span class="toc-text">Loss Reweighting</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Experiments"><span class="toc-number">6.</span> <span class="toc-text">Experiments</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By 罗辑往事</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="/js/sky.js"></script><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
